@@ -1,3 +1,5 @@
+let db = firebase.firestore();
+
 //this are my variables and EventListeners needed
 
 let visitorName = document.querySelector("#visitor");
@@ -48,8 +50,8 @@ function envia(destino, asunto, mensaje) {
         }
       } else if (ajax.status == 400) {
         alert('There was an error 400');
-      } else {
-        alert('Algo salio mal');
+      /*} else {
+        alert('Algo salio mal');*/
       }
     }
   };

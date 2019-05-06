@@ -55,7 +55,7 @@ a:not([href]):not([tabindex]) {
   width: 100%;
   height: auto;
   /*min-height: 100%;  allow for content off the bottom of the page */
-  position: absolute;
+ /* position: absolute; */
   padding: 1rem 2rem;
 }
 
