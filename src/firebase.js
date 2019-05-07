@@ -24,7 +24,7 @@ function createCollection () {
         hour: firebase.firestore.FieldValue.serverTimestamp(), //new Date
         photo: visitorPicture
     });
-    envia(visitingCo.value, "Tienes un visitante!", "Buen día!" + visitorName.value + "  te espera en recepción");
+    envia(visitingCo.value, "Tienes un visitante! ", "Buen día! " + visitorName.value + "  te espera en recepción");
     Swal.fire(
       'Gracias por tu visita ' + visitorName.value,
       'vuelve pronto',

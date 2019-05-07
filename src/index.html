@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang= "es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Colombe</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
       google.charts.load('current', {packages: ['corechart']});
       //google.charts.setOnLoadCallback(drawChart);
     </script>
@@ -14,7 +14,7 @@
   </head>
   <body onload= "dinamicSelector()">
   <nav class="navbar navbar-light bg-light">
-   <img width="80rem" src="../img/iconColombe.png">
+   <img width="80" src="../img/iconColombe.png" alt="icon">
       <a href= "#adminLogin" class="btn btn-outline-success my-2 my-sm-0 nav-link" onclick= "guestList()" data-target= "adminLogin">Admin</a>
   </nav>
   <section class= "active page" id= "welcomePage">
@@ -26,7 +26,7 @@
     <select name="selectCoworker" id="selectCoworker" class="visitantSelector">
     </select>
     <br>
-    <div class="video-wrap" class= "formatVideo">
+    <div class="video-wrap formatVideo">
       <video id="video" class= "formatVideo"></video>
       <button id="startbutton" class="btn btn-secondary registBtn">Captura la foto</button>
       <canvas id="canvas" class= "formatVideo"></canvas>
@@ -36,7 +36,8 @@
   </section>
   <section class= "page" id= "adminLogin">
     <div class= "fields">
-      <img width="50rem" src="../img/icon3.png">
+      <h3>Bienvenid@ Admin</h3>
+      <img width="50" src="../img/icon3.png" alt="icon">
       <br>
       <input type="password" id="password" placeholder= "Ingresa el código">
       <br>
@@ -50,7 +51,7 @@
       <input type= "text" id= "coWorker" placeholder= "Ingresa nuevo coWorker">
       <input type= "text" id= "mailTo" placeholder= "Correo Electronico">
       <button class= "btn btn-outline-success my-2 my-sm-0 btnSave" id="save">Registrar</button>
-      <button class= "btn btn-outline-success my-2 my-sm-0 btnSave" id="save" onclick= "seeCharts()">Ver gráficas</button>
+      <button class= "btn btn-outline-success my-2 my-sm-0 btnSave" onclick= "seeCharts()">Ver gráficas</button>
     </div>
       <h2>Visitantes</h2>
       <div id= "table-data" class= "row">
@@ -64,28 +65,17 @@
     </div>
   </section>
 
-<!--  <section class="visitorPhoto">
-    <video autoplay></video>
-    <img src="">
-    <canvas id="canvas"></canvas>
-    <button id="screenshot-button" class="btn btn-secondary capture-button">Toma la foto</button>
-  </section> -->
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src= "APIfirebase.js"></script>
     <script src="firebase.js"></script>
     <script src="navhash.js"></script>
     <script src="eventsDOM.js"></script>
-    
-   
-    <!--<script>
-      // Initialize Firebase
-
-    </script> -->
-  </body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-   <!-- <script src="sweetalert2.all.min.js"></script> -->
+    <script src="sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+  </body>
 </html>

@@ -54,7 +54,7 @@ let streaming = false,
    visitorPicture = canvas.toDataURL('image/png');
    photo.setAttribute('src', data);
  }
- 
+
  startbutton.addEventListener('click', function(ev){
    takepicture();
    ev.preventDefault();
