@@ -22,7 +22,8 @@ function createCollection () {
         name: visitorName.value,
         visiting: visitingCo.value,
         hour: firebase.firestore.FieldValue.serverTimestamp(), //new Date
-        photo: visitorPicture
+        photo: visitorPicture,
+        exit: firebase.firestor.FieldValue.serverTimestamp()
     });
     envia(visitingCo.value, "Tienes un visitante! ", "Buen día! " + visitorName.value + "  te espera en recepción");
     Swal.fire(
@@ -31,7 +32,7 @@ function createCollection () {
       'success',
      // confirmButtonColor: '#330b62'
     );
-      //alert("Gracias por tú visita");
+
       visitorName.value = "";
       visitingCo.value = "";
 }
@@ -70,8 +71,7 @@ function validateInputs () {
       confirmButtonText: 'Ok',
       confirmButtonColor: '#330b62'
     })
-   // alert ("Tu información no está completa");
-  
+
   } else {
     createCollection();
   };
@@ -96,7 +96,7 @@ function coWorkerList() {
     );
   coWorkerMail.value= "";
   coWorkerName.value= "";
-  
+
 }
 
 //this function validate the inputs from the admin and if there is an error, send an alert.
@@ -108,10 +108,18 @@ function validateInfo () {
       confirmButtonText: 'Ok',
       confirmButtonColor: '#330b62'
     })
-   // alert ("Llena los campos antes de registrar");
-    
+
   } else {
     coWorkerList();
   };
 }
+
+/*function visitFinished () {
+  let finished = firebase.firestore().collection('visitors').doc(id)
+    return finished
+      .update({
+        exit: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    document.getElementById("endedVisit").style.display = 'none';
+}*/
 

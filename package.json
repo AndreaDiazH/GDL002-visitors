@@ -2,7 +2,7 @@
   "name": "gdl002-visitors",
   "version": "1.0.0",
   "description": "## Preámbulo",
-  "main": "index.js",
+  "main": "eventsDOM.js",
   "dependencies": {
     "eslint": "^5.16.0"
   },

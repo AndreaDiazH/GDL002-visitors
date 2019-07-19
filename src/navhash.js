@@ -7,7 +7,7 @@ const app = {
     app.pages.forEach(pg => {
       pg.addEventListener('show', app.pageShown);
     });
-    
+
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', app.nav);
     });

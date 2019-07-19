@@ -1,6 +1,27 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+
+
 h1 {
   color: grey;
   opacity: 0.7;
+}
+
+input {
+  font-size: 1.9rem;
+  margin: .3rem;
+}
+
+.registCoworker{
+  margin: 1rem;
 }
 
 .swal2-styled.swal2-confirm{
@@ -10,12 +31,12 @@ h1 {
 .card-header{
   text-align:center;
   background: none!important;
-  
 }
+
 .formatVideo{
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  border-radius: 7%;
+  max-width: 100%;
+  height: auto;
 }
 .bg-light {
   background-color: #330b62!important;
@@ -42,12 +63,15 @@ a:not([href]):not([tabindex]) {
   margin: 1.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  font-size: 1.5rem;
 }
 
 .btn-secondary {
   color: #fff;
   background-color: #330b62;
   border-color: #1d053a;
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 
 .page{
@@ -60,7 +84,7 @@ a:not([href]):not([tabindex]) {
 }
 
 .active {
-  display: block; 
+  display: block;
 }
 
 .fields{
@@ -68,6 +92,30 @@ a:not([href]):not([tabindex]) {
   padding: 3.5rem;
 }
 
+#btnAdmin{
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.btnSave{
+  padding:1rem;
+  font-size: 1.5rem;
+}
+
 #password{
   margin: 3rem;
+}
+
+footer{
+  background-color: #330b62;
+  align-items: center;
+  text-align: center;
+  position: sticky;
+  padding: 1rem;
+  background-size: cover;
+  margin-top: 17rem;
+}
+
+.footer {
+  flex-shrink: 0;
 }

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Colombe</title>
+    <link rel=”icon” href=”/favicon.ico”>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
@@ -12,9 +13,10 @@
     </script>
     <link rel="stylesheet" href="style.css">
   </head>
+<div class= "content">
   <body onload= "dinamicSelector()">
   <nav class="navbar navbar-light bg-light">
-   <img width="80" src="../img/iconColombe.png" alt="icon">
+   <img width="100" src="../img/iconColombe.png" alt="icon">
       <a href= "#adminLogin" class="btn btn-outline-success my-2 my-sm-0 nav-link" onclick= "guestList()" data-target= "adminLogin">Admin</a>
   </nav>
   <section class= "active page" id= "welcomePage">
@@ -28,11 +30,12 @@
     <br>
     <div class="video-wrap formatVideo">
       <video id="video" class= "formatVideo"></video>
-      <button id="startbutton" class="btn btn-secondary registBtn">Captura la foto</button>
       <canvas id="canvas" class= "formatVideo"></canvas>
     </div>
-    <br>
+    <div id= "rgtButtons">
+      <button id="startbutton" class="btn btn-secondary registBtn">Captura la foto</button>
       <button id="register" class="btn btn-secondary registBtn">Registrate</button>
+    </div>
   </section>
   <section class= "page" id= "adminLogin">
     <div class= "fields">
@@ -41,17 +44,21 @@
       <br>
       <input type="password" id="password" placeholder= "Ingresa el código">
       <br>
-      <div class= "btn btn-outline-success my-2 my-sm-0" onclick= "logAdmin()" data-target= "currentGuest">Ingresar</div>
+      <div id="btnAdmin" class= "btn btn-outline-success my-2 my-sm-0" onclick= "logAdmin()" data-target= "currentGuest">Ingresar</div>
     </div>
   </section>
   <!--Aquí la pantalla de visitas activas -->
   <section class= "page" id= "currentGuest">
     <div class= "fields">
       <h2>Registro de CoWorkers</h2>
+    <div class= "registCoworker">
       <input type= "text" id= "coWorker" placeholder= "Ingresa nuevo coWorker">
       <input type= "text" id= "mailTo" placeholder= "Correo Electronico">
+    </div>
+    <div>
       <button class= "btn btn-outline-success my-2 my-sm-0 btnSave" id="save">Registrar</button>
       <button class= "btn btn-outline-success my-2 my-sm-0 btnSave" onclick= "seeCharts()">Ver gráficas</button>
+    </div>
     </div>
       <h2>Visitantes</h2>
       <div id= "table-data" class= "row">
@@ -64,6 +71,10 @@
     <div id="charts2">
     </div>
   </section>
+</div>
+  <footer class= "footer">
+    <img width="25" src="../img/icon3b.png" alt="icon">
+  </footer>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src= "APIfirebase.js"></script>
@@ -76,6 +87,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
+
   </body>
 </html>
