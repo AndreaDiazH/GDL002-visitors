@@ -23,7 +23,7 @@ function createCollection () {
         visiting: visitingCo.value,
         hour: firebase.firestore.FieldValue.serverTimestamp(), //new Date
         photo: visitorPicture,
-        exit: firebase.firestor.FieldValue.serverTimestamp()
+        //exit: firebase.firestor.FieldValue.serverTimestamp() //exit Date
     });
     envia(visitingCo.value, "Tienes un visitante! ", "Buen día! " + visitorName.value + "  te espera en recepción");
     Swal.fire(
@@ -114,12 +114,16 @@ function validateInfo () {
   };
 }
 
-/*function visitFinished () {
-  let finished = firebase.firestore().collection('visitors').doc(id)
-    return finished
-      .update({
-        exit: firebase.firestore.FieldValue.serverTimestamp()
-      });
-    document.getElementById("endedVisit").style.display = 'none';
-}*/
+function visitFinished (id) {
+  let visitantId = db.collection("visitors").doc(id)
+  .update({
+      endVisit: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  //db.collection("visitors").add({
+  Swal.fire(
+    'Visita terminada'
+  );
+  document.getElementById(id).style.display ='none'; //esta linea solo jala con la primera en dar click, el resto no lo ignora debe ser por los id unicos pero ya hice intentos con las clases pero no parece funcionar.
+}
+
 

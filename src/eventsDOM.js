@@ -72,17 +72,20 @@ function guestList() {
     tableData.innerHTML = '';
     querySnapshot.forEach(doc => {
       let formatHour = new Date (doc.data().hour.seconds*1000);
-      tableData.innerHTML += `
-      <div class="card col-md-3">
-        <h5 class="card-header"><img src="../img/favicon2.ico"></h5>
-        <div class="card-body">
-          <p class="card-text">Nombre: <br> ${doc.data().name}</p>
-          <p class="card-text">CoWorker:<br> ${doc.data().visiting}</p>
-          <p class="card-text">Hora de entrada: <br> ${formatHour}</p>
-          <p class="card-text">Foto:<br> <img src= "${doc.data().photo}" class= "formatVideo"></p>
-          <button type="button" class="btn btn-danger">Visita terminada</button>
-        </div>
-      </div>   `;
+      if(doc.data().endVisit === undefined){
+        tableData.innerHTML += `
+          <div id= "${doc.id}" class="card col-md-3">
+            <h5 class="card-header"><img src="../img/favicon2.ico"></h5>
+            <div class="card-body">
+              <p class="card-text">Nombre: <br> ${doc.data().name}</p>
+              <p class="card-text">CoWorker:<br> ${doc.data().visiting}</p>
+              <p class="card-text">Hora de entrada: <br> ${formatHour}</p>
+              <p class="card-text">Foto:<br> <img src= "${doc.data().photo}" class= "formatVideo"></p>
+              <button type="button" class="btn btn-danger" onclick="visitFinished('${doc.id}')" >Visita terminada</button>
+            </div>
+          </div>   `;
+      }
+
     });
   });
   drawChart();
@@ -91,19 +94,17 @@ function guestList() {
 
 function drawChart() {
 
-  // Create the data table
+  // Create the data table. Esta tabla podria mostrar estadisticas del CoWorker más visitado
   var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Día');
+  data.addColumn('string', 'coWorker');
   data.addColumn('number', 'Cantidad de visitantes');
   data.addRows([
-  ['Lunes', 10],
-  ['Martes', 8],
-  ['Miercoles', 3],
-  ['Jueves', 15],
-  ['Viernes', 9]
+  ['coworkers.name', 10],
+  ['coworkers.name2', 8],
+  ['coworkers.name3', 3]
   ]);
   // Set options for pie chart.
-  var options = {title:'Visitantes por día',
+  var options = {title:'Nuestro CoWorker más visitado',
     width:400,
     height:300};
 
@@ -114,19 +115,20 @@ function drawChart() {
 
 function drawChart2() {
 
-  // Create the data table.
+  // Create the data table. Esta tabla puede mostrar la cantidad de visitantes al día
   var data = new google.visualization.DataTable();
-  data.addColumn('string', 'visitantes');
-  data.addColumn('number', 'CoWorker');
+  data.addColumn('string', 'Día');
+  data.addColumn('number', 'visitantes');
   data.addRows([
-  ['Laboratoria', 50],
-  ['ReportNow', 35],
-  ['CarphathiaLab', 20],
-  ['GeeKGirls', 15],
+  ['Lunes', 50],
+  ['Martes', 35],
+  ['Miercoles', 20],
+  ['Jueves', 15],
+  ['Viernes', 85]
   ]);
 
   // Set options for pie chart.
-  var options = {title:'CoWorkers más visitados',
+  var options = {title:'Visitas diarias',
     width:400,
     height:300};
 
